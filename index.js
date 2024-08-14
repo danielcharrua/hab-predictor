@@ -22,9 +22,9 @@ const getLaunchTime = () => {
 const getEndpoints = () => {
   const now = new Date();
   return [
-    { time: '0', label: `Today forecast (${format(now, 'yyyy-MM-dd')})` },
-    { time: '24', label: `24 hours forecast (${format(addHours(now, 24), 'yyyy-MM-dd')})` },
-    { time: '48', label: `48 hours forecast (${format(addHours(now, 48), 'yyyy-MM-dd')})` },
+    { time: '6', label: `Today forecast (${format(now, 'yyyy-MM-dd')})` },
+    { time: '30', label: `24 hours forecast (${format(addHours(now, 24), 'yyyy-MM-dd')})` },
+    { time: '54', label: `48 hours forecast (${format(addHours(now, 48), 'yyyy-MM-dd')})` },
   ];
 };
 

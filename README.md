@@ -14,7 +14,7 @@ HAB Predictor is a Node.js application designed to monitor and predict the landi
 - Generates static map images using the Mapbox Static Images API.
 - Sends email notifications based on the prediction results.
 - Configurable via environment variables.
-- Scheduled to run daily at 10:30 AM UTC.
+- Scheduled to run daily at 11:00 AM UTC.
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ The application uses environment variables to configure its behavior. Below is a
 
 #### Scheduling
 
-- **`SCHEDULE_TIME`**: The time of day (in 24-hour format) when the application should run, in UTC. For example, `10:30` means the application will run at 10:30 UTC.
+- **`SCHEDULE_TIME`**: The time of day (in 24-hour format) when the application should run, in UTC. For example, `11:00` means the application will run at 11:00 UTC.
 
 #### Mailgun for email notifications
 
@@ -127,7 +127,7 @@ To keep the application running in the background and automatically restart on f
 
 ## Schedule
 
-The application is scheduled to run daily at 10:30 AM UTC. This schedule is defined in the script and will trigger the execution of the job at the specified time.
+The application is scheduled to run daily at 11:00 AM UTC. This schedule is defined in the script and will trigger the execution of the job at the specified time.
 
 ## Contributing
 
