@@ -97,7 +97,13 @@ The application uses environment variables to configure its behavior. Below is a
 
 - **`TEST_MODE`**: Set this to `true` to run the application in test mode, which will execute the script immediately without waiting for the scheduled time. This is useful for debugging and verifying the setup.
 
-## Running as a background process with PM2
+## Deploy on Railway
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EtxB9v?referralCode=efO5Qu)
+
+You can test the app free on railway. Just create an account and complete your environment variables.
+
+## Deploy on custom machine/VPS
 
 To keep the application running in the background and automatically restart on failures, you can use pm2.
 
