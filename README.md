@@ -51,6 +51,7 @@ HAB Predictor is a Node.js application designed to monitor and predict the landi
 1. **Run the application:**
 
     To run the application manually:
+
     ```bash
     npm start
     ```
@@ -103,33 +104,87 @@ The application uses environment variables to configure its behavior. Below is a
 
 You can test the app free on railway. Just create an account and complete your environment variables.
 
+## Deploy using Docker
+
+You can run the HAB Predictor in a **Docker container** without the need to manually install dependencies. Follow these steps to build and run the application inside a Docker container.
+
+#### Build the Docker image
+
+First, make sure you have Docker installed on your machine. Then, navigate to the project directory and build the image:
+
+```bash
+docker build -t hab-predictor .
+```
+
+This will create a Docker image named `hab-predictor` based on the `Dockerfile` included in the project.
+
+#### Copy the `.env` file
+
+Before running the container, make sure to copy the `.env` file from the example template:
+
+```bash
+cp .env.example .env
+```
+
+Edit the `.env` file with your preferred configuration values.
+
+#### Run the container with the `.env` file
+
+Run the container using the `.env` file instead of specifying environment variables manually:
+
+```bash
+docker run -d --env-file .env --name hab-predictor hab-predictor
+```
+
+#### View logs
+
+To check if the application is running correctly, view the logs:
+
+```bash
+docker logs -f hab-predictor
+```
+
+#### Stop and remove the container
+
+To stop the container:
+
+```bash
+docker stop hab-predictor
+```
+
+To remove the container:
+
+```bash
+docker rm hab-predictor
+```
+
 ## Deploy on custom machine/VPS
 
 To keep the application running in the background and automatically restart on failures, you can use pm2.
 
-1. **Install pm2 globally:**
+#### Install pm2 globally
 
-    ```bash
-    npm install -g pm2
-    ```
+```bash
+npm install -g pm2
+```
 
-1. **Start the application with pm2:**
+#### Start the application with pm2
 
-    ```bash
-    pm2 start index.js --name "weather-balloon-predictor"
-    ```
+```bash
+pm2 start index.js --name "weather-balloon-predictor"
+```
 
-1. **Save the pm2 process list:**
+#### Save the pm2 process list
 
-    ```bash
-    pm2 save
-    ```
+```bash
+pm2 save
+```
 
-1. **Set pm2 to start on system boot:**
+#### Set pm2 to start on system boot
 
-    ```bash
-    pm2 startup
-    ```
+```bash
+pm2 startup
+```
 
 ## Schedule
 
